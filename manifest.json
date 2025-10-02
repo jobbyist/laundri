@@ -1,9 +1,9 @@
 {
   "background_color": "#fbd43c",
-  "description": "At Laundri, we celebrate imperfect beauty and minimalism with a modern edge. Our ethics and aesthetics are shaped by a creative tension - between effortless and intentional, subtraction and addition.",
+  "description": "Create your fashion label/brand or collection, design products using pre-made fabrics and templates, connect with on-demand suppliers like Printful and AliExpress with our AI-Powered Fashion Label Creation Tool",
   "dir": "ltr",
   "display": "standalone",
-  "name": "Laundri",
+  "name": "Laundri - AI Fashion Designer",
   "orientation": "any",
   "scope": "/",
   "short_name": "Laundri",
@@ -13,7 +13,10 @@
     {
       "src": "/favicon.png",
       "type": "image/png",
-      "sizes": "1875x1875"
+      "sizes": "1875x1875",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["lifestyle", "shopping", "productivity"],
+  "screenshots": []
 }

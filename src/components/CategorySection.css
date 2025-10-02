@@ -1,0 +1,142 @@
+.ai-banner-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #fbd43c 0%, #ff9a76 100%);
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.ai-banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ai-banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.ai-banner-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.ai-banner-button {
+  background-color: #000;
+  color: #fbd43c;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.ai-banner-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.home-tape-section {
+  width: 100%;
+}
+
+.sliding-tapes-home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.sliding-tapes-home-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.home-tape-width-20k {
+  width: 100%;
+}
+
+.home-tape-scroller {
+  opacity: 1 !important;
+  animation: scroll 40s linear infinite;
+}
+
+.home-tape-stack {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.home-tape-container {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.tape-home-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.home-tape-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.home-tape-image:hover {
+  transform: scale(1.1);
+}
+
+.tape-home-typography {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.tape-home-typography:hover {
+  color: #fbd43c;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-banner-title {
+    font-size: 2rem;
+  }
+  
+  .ai-banner-description {
+    font-size: 1rem;
+  }
+  
+  .home-tape-container {
+    width: 250px;
+  }
+  
+  .tape-home-image-wrapper {
+    height: 250px;
+  }
+}
