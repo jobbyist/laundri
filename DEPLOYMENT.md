@@ -40,6 +40,29 @@ vercel --prod
 
 ### GitHub Pages
 
+**✅ CONFIGURED - Automatic deployment is set up!**
+
+This repository is configured to automatically deploy to GitHub Pages using GitHub Actions with the custom domain `laundri.co.za`.
+
+**Deployment Workflow:**
+- Automatically triggers on push to `main` branch
+- Can be manually triggered from Actions tab
+- Uses the workflow at `.github/workflows/deploy.yml`
+
+**Setup Instructions:**
+See [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) for complete setup instructions.
+
+**Quick Steps to Enable:**
+1. Go to repository Settings → Pages
+2. Set Source to "GitHub Actions"
+3. Verify custom domain is set to `laundri.co.za`
+4. Configure DNS records with your domain provider (see GITHUB_PAGES_SETUP.md)
+5. Merge to `main` branch or manually trigger workflow
+
+**Manual Deployment (Alternative):**
+
+If you prefer manual deployment instead of automatic:
+
 1. Install gh-pages package:
 ```bash
 npm install --save-dev gh-pages
@@ -54,15 +77,16 @@ npm install --save-dev gh-pages
 }
 ```
 
-3. Update `vite.config.ts` to set the correct base path:
+3. For custom domain, keep base as `/` in `vite.config.ts` (already configured)
+4. For GitHub repo URL (e.g., username.github.io/laundri), set:
 ```typescript
 export default defineConfig({
-  base: '/laundri/',  // Replace with your repo name
+  base: '/laundri/',  // Only if NOT using custom domain
   // ... rest of config
 })
 ```
 
-4. Deploy:
+5. Deploy manually:
 ```bash
 npm run deploy
 ```
@@ -152,9 +176,44 @@ The current configuration includes:
 3. Configure DNS records as instructed
 
 ### GitHub Pages
-1. Add `CNAME` file to public directory with your domain
-2. Configure DNS with A records or CNAME
-3. Enable HTTPS in repository settings
+
+**✅ Already configured for this repository!**
+
+The custom domain `laundri.co.za` is set up with:
+1. ✅ CNAME file in `public/` directory (automatically deployed)
+2. ⚠️ DNS records need to be configured with your domain provider:
+
+**DNS Configuration Required:**
+
+For the apex domain `laundri.co.za`, add these A records:
+```
+Type: A
+Name: @
+Value: 185.199.108.153
+
+Type: A
+Name: @
+Value: 185.199.109.153
+
+Type: A
+Name: @
+Value: 185.199.110.153
+
+Type: A
+Name: @
+Value: 185.199.111.153
+```
+
+For the www subdomain (optional):
+```
+Type: CNAME
+Name: www
+Value: jobbyist.github.io
+```
+
+3. Enable HTTPS in GitHub repository Settings → Pages (after DNS is configured)
+
+See [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) for detailed instructions.
 
 ## SSL/HTTPS
 
